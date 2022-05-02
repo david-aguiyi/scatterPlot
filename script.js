@@ -4,16 +4,16 @@ let url =
 let req = new XMLHttpRequest();
 
 let values = [];
-// Create x-axis
+// create x-axis
 let xScale;
-// Creat y-axis
+// creat y-axis
 let yScale;
 
 let width = 800;
 let height = 600;
 let padding = 40;
 
-// Returns svg element in html
+// returns svg element in html
 let svg = d3.select(svg);
 // draws canvas with dimension that we set
 let drawCanvas = () => {
@@ -23,8 +23,14 @@ let drawCanvas = () => {
 
 // generates x and y scales
 let generateScales = () => {};
-
-// Plot circle dot piont
+// plot circle dot piont
 let drawPoint = () => {};
 // draws the x and y axis unto graph
 let generateAxes = () => {};
+
+req.open("GET", url, true);
+// runs once the request has been completed and there is a response
+req.onload = () => {
+	console.log(req.responseText);
+};
+req.send();
